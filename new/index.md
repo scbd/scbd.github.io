@@ -19,143 +19,36 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Understanding the way OAuth works can help create and debug applications which use SCBD's API. To use OAuth, an application must:
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Obtain access tokens to act on behalf of a user account.
+Authorize all HTTP requests it sends to SCBD's APIs.
 
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+The following pages will cover exactly how to obtain authorization through OAuth.
 
-# Authentication
 
-> To authorize, use this code:
+# OAuth FAQ
 
-```ruby
-require 'kittn'
+## What is OAuth?
+OAuth is an authentication protocol that allows users to approve application to act on their behalf without sharing their password. 
+More information can be found at [oauth.net]oauth.net 
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+## Where do I create an application?
+Currently SCBD restricts access to OAuth application. please contact SCBD's IT team to create application for you.
 
-```python
-import kittn
+## How long does an access token last?
+Access tokens expires in 24 hours. Your access token will be invalid if there is a change in scope
+ or if a Twitter admin suspends your application.
 
-api = kittn.authorize('meowmeowmeow')
-```
+## What do I do if an access token expires?
+You can request renewal of the existing token by proving a refresh token.
 
-```bash
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
+## What is a refresh token?
+A refresh token is another token with higher expiry date which can be used to renew expired access tokens.
 
-> Make sure to replace `meowmeowmeow` with your API key.
+## How long does an refresh token last?
+A refresh token has a expiry of 365 days.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```bash
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-| Parameter | Default | Description |
-| ---- | ---- | ---- |
-| include_cats | false | If set to true, the result will also include cats. |
-| available | true | If set to false, the result will include kittens that have already been adopted. |
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```bash
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
 
 ### HTTP Request
 
