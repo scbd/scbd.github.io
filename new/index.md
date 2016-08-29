@@ -1,5 +1,8 @@
 ---
-title: API Reference
+title: SCBD OAuth Refernce
+layout: layout
+version: v1.0
+lang: en
 
 language_tabs:
   - node: NodeJS
