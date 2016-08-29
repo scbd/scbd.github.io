@@ -35,24 +35,17 @@ The following pages will cover exactly how to obtain authorization through OAuth
 ## What is OAuth?
 OAuth is an authentication protocol that allows users to approve application to act on their behalf without sharing their password. 
 More information can be found at [oauth.net]oauth.net 
-
 ## Where do I create an application?
 Currently SCBD restricts access to OAuth application. please contact SCBD's IT team to create application for you.
-
 ## How long does an access token last?
 Access tokens expires in 24 hours. Your access token will be invalid if there is a change in scope
  or if a Twitter admin suspends your application.
-
 ## What do I do if an access token expires?
 You can request renewal of the existing token by proving a refresh token.
-
 ## What is a refresh token?
 A refresh token is another token with higher expiry date which can be used to renew expired access tokens.
-
 ## How long does an refresh token last?
 A refresh token has a expiry of 365 days.
-
-
 ### HTTP Request
 
 `GET http://example.com/kittens/<ID>`

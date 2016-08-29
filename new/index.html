@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>SCBD OAuth Refernce
+layout</title>
+
+    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <link href="stylesheets/default.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="javascripts/all.js" type="text/javascript"></script>
+
+      <script>
+        $(function() {
+          var langs = [];
+            langs.push("node");
+          setupLanguages( langs );
+        });
+      </script>
+  </head>
+
+  <body class="index">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="node"> NodeJS</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+                <li><a href='#'>Sign Up for a Developer Key</a></li>
+                <li><a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+        <div class="content">
+          <h1 id="introduction">Introduction</h1>
+<p>Understanding the way OAuth works can help create and debug applications which use SCBD&#39;s API. To use OAuth, an application must:</p>
+<p>Obtain access tokens to act on behalf of a user account.
+Authorize all HTTP requests it sends to SCBD&#39;s APIs.</p>
+<p>The following pages will cover exactly how to obtain authorization through OAuth.</p>
+<h1 id="oauth-faq">OAuth FAQ</h1>
+<h2 id="what-is-oauth-">What is OAuth?</h2>
+<p>OAuth is an authentication protocol that allows users to approve application to act on their behalf without sharing their password. 
+More information can be found at [oauth.net]oauth.net </p>
+<h2 id="where-do-i-create-an-application-">Where do I create an application?</h2>
+<p>Currently SCBD restricts access to OAuth application. please contact SCBD&#39;s IT team to create application for you.</p>
+<h2 id="how-long-does-an-access-token-last-">How long does an access token last?</h2>
+<p>Access tokens expires in 24 hours. Your access token will be invalid if there is a change in scope
+ or if a Twitter admin suspends your application.</p>
+<h2 id="what-do-i-do-if-an-access-token-expires-">What do I do if an access token expires?</h2>
+<p>You can request renewal of the existing token by proving a refresh token.</p>
+<h2 id="what-is-a-refresh-token-">What is a refresh token?</h2>
+<p>A refresh token is another token with higher expiry date which can be used to renew expired access tokens.</p>
+<h2 id="how-long-does-an-refresh-token-last-">How long does an refresh token last?</h2>
+<p>A refresh token has a expiry of 365 days.</p>
+<h3 id="http-request">HTTP Request</h3>
+<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<h3 id="url-parameters">URL Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the kitten to retrieve</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="errors">Errors</h1>
+<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+<table>
+<thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request sucks</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarially offline for maintanance. Please try again later.</td>
+</tr>
+</tbody>
+</table>
+        </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+              <a href="#" data-language-name="node"> NodeJS</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
