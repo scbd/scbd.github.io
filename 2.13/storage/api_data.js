@@ -153,7 +153,7 @@ define({ "api": [
           {
             "group": "Error",
             "optional": false,
-            "field": "Errors",
+            "field": "errors",
             "description": "<p>Error list from validation</p> "
           },
           {
