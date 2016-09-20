@@ -203,7 +203,7 @@ define({ "api": [
             "optional": false,
             "type" :"ERROR_INVALID_UNEXPECTED_TERM",
             "field": "Error.UnexpectedTerm",
-            "description": "<p>The provide identifier does not exist, please validate that you are passing correct identifier the the list.</p> "
+            "description": "<p>The provide identifier does not exist, please validate that you are passing correct identifier from the list.</p> "
           },
           {
             "group": "Error",
