@@ -107,18 +107,117 @@ define({ "api": [
     "success": {
       "fields": {
         "Success": [
+           {
+             "group": "Success",
+             "type": "<p>String</p> ",
+             "optional": false,
+             "field": "identifier",
+             "description": "<p>Document identifier</p> "
+           },
+           {
+            "group": "Success",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "schema",
+            "description": "<p>Specify the document common-format posted (type / schema)</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>Object</p> ",
+            "field": "metadata",
+            "description": "<p>Document metadata to use to determine security access. <em>List of parameters may vary depending of the type of document.</em></p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>String</p> ",
+            "field": "metadata.government",
+            "description": "<p>Government code to which the record should belong. <em>For national record only</em></p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>Object</p> ",
+            "field": "title",
+            "description": "<p>Document title</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>Object</p> ",
+            "field": "summary",
+            "description": "<p>Document summary</p> "
+          },
+          {
+            "group": "Success",
+            "field": "",
+            "description": "<p>If the document passes the validations the error field will not be there in the result.</p> "
+          },
           {
             "group": "Success",
             "optional": false,
-            "field": "",
-            "description": "<p>If the document passes the validations the error field will not be there in the result.</p> "
+            "field": "errors",
+            "description": "<p>Error list from validation</p> "
+          },
+          {
+            "group": "Success",
+            "optional": false,
+            "type" :"ERROR_MANTATORY",
+            "field": "Error.Mandatory",
+            "description": "<p>The field is mandatory.</p> "
+          },
+          {
+            "group": "Success",
+            "optional": false,
+            "type" :"ERROR_HAS_VALUE",
+            "field": "Error.HasValue",
+            "description": "<p>The field exists, however the field cannot contain value at this point.</p> "
+          },
+          {
+            "group": "Success",
+            "optional": false,
+            "type" :"ERROR_HAS_EMPTY_VALUE",
+            "field": "Error.EmptyValue",
+            "description": "<p>The field cannot be a empty string.</p> "
+          },
+          {
+            "group": "Success",
+            "optional": false,
+            "type" :"ERROR_INVALID_VALUE",
+            "field": "Error.InvalidValue",
+            "description": "<p>The field contains a unsupported value.</p> "
+          },
+          {
+            "group": "Success",
+            "optional": false,
+            "type" :"ERROR_INVALID_PROPERTY",
+            "field": "Error.InvalidProperty",
+            "description": "<p>The provided field does not exists.</p> "
+          },
+          {
+            "group": "Success",
+            "optional": false,
+            "type" :"ERROR_INVALID_UNSPECIFIED_LOCALE",
+            "field": "Error.EmptyValue",
+            "description": "<p>The locale was not provided.</p> "
+          },
+          {
+            "group": "Success",
+            "optional": false,
+            "type" :"ERROR_INVALID_UNEXPECTED_TERM",
+            "field": "Error.UnexpectedTerm",
+            "description": "<p>The provide identifier does not exist, please validate that you are passing correct identifier from the list.</p> "
+          },
+          {
+            "group": "Success",
+            "optional": false,
+            "type" :"ERROR_INVALID_TYPE",
+            "field": "Error.InvalidType",
+            "description": "<p>The field type is invalid</p> "
           }
         ]
       },
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n{\n \"identifier\"   :  \"EB4DAA23-1410-CC2A-23A6-AF7A8D02216B\",\n  \"schema\"      :  \"authority\",\n  \"locales\"     :  [\"en\"],\n  \"title\"       :  {\"en\":\"sdfdsf\"},\n  \"summary\"     :  {\"en\":\"sdfds\"},\n  \"metaData\"    :  {\"government\":\"ht\"}\n}",
+          "content": "HTTP/1.1 200 OK\n{\n \"identifier\"   :  \"EB4DAA23-1410-CC2A-23A6-AF7A8D02216B\",\n  \"schema\"      :  \"authority\",\n  \"locales\"     :  [\"en\"],\n  \"title\"       :  {\"en\":\"sdfdsf\"},\n  \"summary\"     :  {\"en\":\"sdfds\"},\n  \"metaData\"    :  {\"government\":\"ht\"}\n  \"errors\"      :  [\n    {\n      \"property\"   :  \"header.languages\",\n      \"code\"       :  \"Error.InvalidValue\",\n      \"parameters\" :  \"Invalid language de, supported languages are ar, en, es, fr, ru, zh\"\n    },\n    {\n      \"property\"   :  \"title\",\n      \"code\"       :  \"Error.Mandatory\"\n    }\n  ]\n}",
           "type": "json"
         }
       ]
@@ -149,68 +248,6 @@ define({ "api": [
             "optional": false,
             "field": "invalidParameter",
             "description": "<p>One or more parameters values are invalid</p> "
-          },
-          {
-            "group": "Error",
-            "optional": false,
-            "field": "errors",
-            "description": "<p>Error list from validation</p> "
-          },
-          {
-            "group": "Error",
-            "optional": false,
-            "type" :"ERROR_MANTATORY",
-            "field": "Error.Mandatory",
-            "description": "<p>The field is mandatory.</p> "
-          },
-          {
-            "group": "Error",
-            "optional": false,
-            "type" :"ERROR_HAS_VALUE",
-            "field": "Error.HasValue",
-            "description": "<p>The field exists, however the field cannot contain value at this point.</p> "
-          },
-          {
-            "group": "Error",
-            "optional": false,
-            "type" :"ERROR_HAS_EMPTY_VALUE",
-            "field": "Error.EmptyValue",
-            "description": "<p>The field cannot be a empty string.</p> "
-          },
-          {
-            "group": "Error",
-            "optional": false,
-            "type" :"ERROR_INVALID_VALUE",
-            "field": "Error.InvalidValue",
-            "description": "<p>The field contains a unsupported value.</p> "
-          },
-          {
-            "group": "Error",
-            "optional": false,
-            "type" :"ERROR_INVALID_PROPERTY",
-            "field": "Error.InvalidProperty",
-            "description": "<p>The provided field does not exists.</p> "
-          },
-          {
-            "group": "Error",
-            "optional": false,
-            "type" :"ERROR_INVALID_UNSPECIFIED_LOCALE",
-            "field": "Error.EmptyValue",
-            "description": "<p>The locale was not provided.</p> "
-          },
-          {
-            "group": "Error",
-            "optional": false,
-            "type" :"ERROR_INVALID_UNEXPECTED_TERM",
-            "field": "Error.UnexpectedTerm",
-            "description": "<p>The provide identifier does not exist, please validate that you are passing correct identifier from the list.</p> "
-          },
-          {
-            "group": "Error",
-            "optional": false,
-            "type" :"ERROR_INVALID_TYPE",
-            "field": "Error.InvalidType",
-            "description": "<p>The field type is invalid</p> "
           }
         ]
       },
@@ -233,11 +270,6 @@ define({ "api": [
         {
           "title": "Invalid Parameter",
           "content": "HTTP/1.1 400 Bad Request\n{\n  \"statusCode\" : 400,\n  \"code\"       : \"invalidParameter\",\n  \"fields\"     : [\"date\"],\n  \"message\"    : \"Date format is invalid\" //Optional\n}",
-          "type": "Json"
-        },
-        {
-          "title": "Validation Errors",
-          "content": "HTTP/1.1 200 OK\n{\n\"errors\":[\n    {\n      \"property\"   :  \"header.languages\",\n      \"code\"       :  \"Error.InvalidValue\",\n      \"parameters\" :  \"Invalid language de, supported languages are ar, en, es, fr, ru, zh\"\n    },\n    {\n      \"property\"   :  \"title\",\n      \"code\"       :  \"Error.Mandatory\"\n    },\n  ]\n}",
           "type": "Json"
         }
       ]
