@@ -131,10 +131,12 @@ POST /api/v2016/oauth2/token
 
 
 ## Authorizing a request
-
-
-
-
+All SCBD API calls should be authorised by proving a `access_token` type `Bearer` in the Authorization http-header
+```
+GET /api/v2016/me
+Content-Type: application/json
+Authorization: Bearer="BBBBBBBBBBBBBBBB"
+```
 ### HTTP Request
 
 `GET http://example.com/kittens/<ID>`
