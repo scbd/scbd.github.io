@@ -84,7 +84,7 @@ https://accounts.cbd.int/authorize?response_type=code&client_id=1111&redirect_ur
 ```
 
 | Parameter     | Description   | 
-| ------------- |:-------------:|
+| ------------- |:-------------|
 | response_type | response_type can be code (recommended for services) or token (recommended for web and native (e.g. iOS, Android) applications). |
 | client_id     | custom application client id |
 | redirect_uri | The redirec uri is used to redirect the user after he makes a decision to allow or deny your applications access to their account|
@@ -111,7 +111,7 @@ POST /api/v2016/oauth2/token
 ```
 
 | Parameter     | Description   | 
-| ------------- |:-------------:|
+| ------------- |:-------------|
 | client_id     | custom application client id |
 | client_secret | The applications client secret|
 | code | The newly received code from the Authorization-code call |
@@ -122,7 +122,7 @@ POST /api/v2016/oauth2/token
 { access_token: "BBBBBBBBBBBBBBBB", expire_in: 31536000, scope: "ALL", refresh_token: "CCCCCCCCCCCCCCCC", token_type: "Bearer" }
 ```
 | Parameter     | Description   | 
-| ------------- |:-------------:|
+| ------------- |:-------------|
 | access_token     | The `access_token` exchanged for the code |
 | expire_in | The expiration of the `access_token` in seconds|
 | scope | The authorised scope for the application |
