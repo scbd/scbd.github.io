@@ -1,4 +1,4 @@
----
+/*---
 title: SCBD OAuth Refernce
 layout: layout
 version: v1.0
@@ -18,13 +18,13 @@ includes:
 
 search: true
 ---
-
+*/
 # Introduction
 
 Understanding the way OAuth works can help create and debug applications which use SCBD's API. To use OAuth, an application must:
 
-Obtain access tokens to act on behalf of a user account.
-Authorize all HTTP requests it sends to SCBD's APIs.
+* Obtain access tokens to act on behalf of a user account.
+* Authorize all HTTP requests it sends to SCBD's APIs.
 
 The following pages will cover exactly how to obtain authorization through OAuth.
 
@@ -37,10 +37,12 @@ More information can be found at [oauth.net]oauth.net
 ## Where do I create an OAuth application?
 Currently SCBD restricts access to OAuth application. please contact SCBD's IT team to create application for you. Please provide
 following information to create a new application
-1. Application Name
-2. Application Logo
-3. Application Website
-4. Callback URL
+
+* Application Name
+* Application Logo
+* Application Website
+* Callback URL
+
 The redirect URI is where the service will redirect the user after they authorize (or deny) your application, and therefore the part of your application that will handle authorization codes or access tokens.
 
 ## What do you get from a new OAuth application?
