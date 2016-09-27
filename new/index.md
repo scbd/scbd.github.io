@@ -113,7 +113,7 @@ Content-Type: application/x-www-form-urlencoded
 
 { client_id: "1111", secret: "xxxx", code: "AAAAAAAAAAAAAAAA" }
 ```
-*please mote that the data has be *application/x-www-form-urlencoded* encoded
+please mote that the data has be *application/x-www-form-urlencoded* encoded
 
 | Parameter     | Description   | 
 | ------------- |:-------------|
@@ -142,3 +142,45 @@ GET /api/v2016/me
 Content-Type: application/json
 Authorization: Bearer BBBBBBBBBBBBBBBB
 ```
+## Authrorization Grant and Access Token flow
+  +--------+                                           +---------------+
+  |        |---------(A) Authorization Request ------->|               |
+  |        |                                           |               |
+  |        |<--------(B) Authorization Grant ----------|               |
+  |        |                                           | Authorization |
+  | Client |                                           |     Server    |
+  |        |                                           |               |
+  |        |---------(C) Authorization Grant --------->|               |
+  |        |                                           |               |
+  |        |<--------(D) Access Token -----------------|               |
+  |        |                                           |               |
+  |        |                                           |               |
+  |        |                                           |               |
+  |        |---------(E) Access Token ---------------->|               |
+  |        |                                           |               |
+  |        |<--------(F) protected Resource -----------|               |
+  |        |                                           |               | 
+  |        |                                           |               |
+  +--------+                                           +———————+
+
+## Post Authorization Grant flow
+  +--------+                                           +---------------+
+  |        |--(A)------- Authorization Grant --------->|               |
+  |        |                                           |               |
+  |        |<-(B)----------- Access Token -------------|               |
+  |        |               & Refresh Token             |               |
+  |        |                                           |               |
+  |        |                            +----------+   |               |
+  |        |--(C)---- Access Token ---->|          |   |               |
+  |        |                            |          |   |               |
+  |        |<-(D)- Protected Resource --| Resource |   | Authorization |
+  | Client |                            |  Server  |   |     Server    |
+  |        |--(E)---- Access Token ---->|          |   |               |
+  |        |                            |          |   |               |
+  |        |<-(F)- Invalid Token Error -|          |   |               |
+  |        |                            +----------+   |               |
+  |        |                                           |               |
+  |        |--(G)----------- Refresh Token ----------->|               |
+  |        |                                           |               |
+  |        |<-(H)----------- Access Token -------------|               |
+  +--------+           & Optional Refresh Token        +———————+
