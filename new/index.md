@@ -109,8 +109,11 @@ In case if you have a `authorization_code` you can exchange it for a `access_tok
 ##### Resource
 ```
 POST /api/v2016/oauth2/token
+Content-Type: application/x-www-form-urlencoded
+
 { client_id: "1111", secret: "xxxx", code: "AAAAAAAAAAAAAAAA" }
 ```
+*please mote that the data has be *application/x-www-form-urlencoded* encoded
 
 | Parameter     | Description   | 
 | ------------- |:-------------|
@@ -137,5 +140,5 @@ All SCBD API calls should be authorised by proving a `access_token` type `Bearer
 ```
 GET /api/v2016/me
 Content-Type: application/json
-Authorization: Bearer="BBBBBBBBBBBBBBBB"
+Authorization: Bearer BBBBBBBBBBBBBBBB
 ```
