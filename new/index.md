@@ -76,7 +76,7 @@ POST /api/v2016/me/authorize   { email: "xxxx", password: "xxxx" }
 
 ## Authorization-code(with delegation)
 
-### Allwos a custom application to obtain an OAuth authorization-code from CBD accounts.cbd.int though end-user authorization.
+Allwos a custom application to obtain an OAuth authorization-code from CBD accounts.cbd.int though end-user authorization.
 
 ##### Resource
 ```
