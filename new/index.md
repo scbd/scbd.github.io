@@ -90,8 +90,46 @@ https://accounts.cbd.int/authorize?response_type=code&client_id=1111&redirect_ur
 | redirect_uri | The redirec uri is used to redirect the user after he makes a decision to allow or deny your applications access to their account|
 | scope | The scope of access your application requires to the users account |
 
+#### Response
+If code, the AUTHORIZATION_CODE will be returned as below.
+```
+https://client.com/callback?code=AUTHORIZATION_CODE
+```
+
+If token, the ACCESS_TOKEN will be returned as below. Note the # instead of the ?.
+```
+https://client.com/callback#token=ACCESS_TOKEN
+```
 
 ## Exchange authorization-code for access-token
+In case if you have a `authorization_code` you can exchange it for a `access-token`
+
+##### Resource
+```
+POST /api/v2016/oauth2/token
+{ client_id: "1111", secret: "xxxx", code: "AAAAAAAAAAAAAAAA" }
+```
+
+| Parameter     | Description   | 
+| ------------- |:-------------:|
+| client_id     | custom application client id |
+| client_secret | The applications client secret|
+| code | The newly received code from the Authorization-code call |
+
+#### Response
+
+```
+{ access_token: "BBBBBBBBBBBBBBBB", expire_in: 31536000, scope: "ALL", refresh_token: "CCCCCCCCCCCCCCCC", token_type: "Bearer" }
+```
+| Parameter     | Description   | 
+| ------------- |:-------------:|
+| access_token     | The `access_token` exchanged for the code |
+| expire_in | The expiration of the `access_token` in minutes|
+| scope | The authorised scope for the application |
+| refresh_token | The `refresh_token` for this authorization which can be used to renew `access_token` |
+| token_type | The type of the token which should be used when authorizing a request|
+
+
 ## Authorizing a request
 
 
