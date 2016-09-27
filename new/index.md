@@ -61,21 +61,27 @@ A refresh token never expires unless if there is a change in scope or if the use
 
 # OAuth API calls
 
-## authorization-code(user/password)
+## Authorization-code(user/password)
 Obtain an authorization-code from the API (instead of UI)*
 
 ### Request
-```POST /api/v2016/me/authorize   { email: "xxxx", password: "xxxx" }```
+```
+POST /api/v2016/me/authorize   { email: "xxxx", password: "xxxx" }
+```
 
 ### Response
-```{ code: "AAAAAAAAAAAAAAAA", expire_in: 300 }```
+```
+{ code: "AAAAAAAAAAAAAAAA", expire_in: 300 }
+```
 
-## authorization-code(with delegation)
+## Authorization-code(with delegation)
 
 ### Allwos a custom application to obtain an OAuth authorization-code from CBD accounts.cbd.int though end-user authorization.
 
 ##### Resource
-
+```
+https://accounts.cbd.int/authorize?response_type=code&client_id=1111&redirect_uri=xyzxyzxyz&scope=all
+```
 
 | Parameter     | Description   | 
 | ------------- |:-------------:|
