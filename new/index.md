@@ -143,7 +143,7 @@ Content-Type: application/json
 Authorization: Bearer BBBBBBBBBBBBBBBB
 ```
 ## Authrorization Grant and Access Token flow
-  +--------+                                           +---------------+
+```  +--------+                                           +---------------+
   |        |---------(A) Authorization Request ------->|               |
   |        |                                           |               |
   |        |<--------(B) Authorization Grant ----------|               |
@@ -161,10 +161,10 @@ Authorization: Bearer BBBBBBBBBBBBBBBB
   |        |<--------(F) protected Resource -----------|               |
   |        |                                           |               | 
   |        |                                           |               |
-  +--------+                                           +———————+
+  +--------+                                           +———————+```
 
 ## Post Authorization Grant flow
-  +--------+                                           +---------------+
+```  +--------+                                           +---------------+
   |        |--(A)------- Authorization Grant --------->|               |
   |        |                                           |               |
   |        |<-(B)----------- Access Token -------------|               |
@@ -183,4 +183,4 @@ Authorization: Bearer BBBBBBBBBBBBBBBB
   |        |--(G)----------- Refresh Token ----------->|               |
   |        |                                           |               |
   |        |<-(H)----------- Access Token -------------|               |
-  +--------+           & Optional Refresh Token        +———————+
+  +--------+           & Optional Refresh Token        +———————+```
