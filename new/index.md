@@ -51,7 +51,7 @@ The Client ID is a publicly exposed string that is used to identify the applicat
 The Client Secret is used to authenticate identity of the application when the application is making calls like get access token, renew access token.
 The Client Secret should be securely stored.
 ## How long does an access token last?
-Access tokens are valid for 365 days. Your access token will be invalid if there is a change in scope or if the user explicitly revokes your application
+Access tokens are valid for 1 year. Your access token will be invalid if there is a change in scope or if the user explicitly revokes your application
  or if a SCBD admin suspends your application.
 ## What do I do if an access token expires?
 You can request renewal of the existing token by proving a refresh token.
