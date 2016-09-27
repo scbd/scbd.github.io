@@ -76,8 +76,10 @@ Obtain an authorization-code from the API (instead of UI)*
 
 ##### Resource
 --------------
-```https://accounts.cbd.int/authorize?response_type=code&client_id=1111&redirect_uri=xyzxyzxyz&scope=all```
 
+```https://accounts.cbd.int/authorize?response_type=code&client_id=1111&redirect_uri=xyzxyzxyz&scope=all```
+| Parameter     | Description           | 
+| ------------- |:-------------:|
 | response_type | response_type can be code (recommended for services) or token (recommended for web and native (e.g. iOS, Android) applications). |
 | client_id     | custom application client id |
 | redirect_uri | The redirec uri is used to redirect the user after he makes a decision to allow or deny your applications access to their account|
