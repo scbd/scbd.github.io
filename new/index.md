@@ -76,7 +76,6 @@ Obtain an authorization-code from the API (instead of UI)*
 
 ##### Resource
 
-```https://accounts.cbd.int/authorize?response_type=code&client_id=1111&redirect_uri=xyzxyzxyz&scope=all```
 
 | Parameter     | Description   | 
 | ------------- |:-------------:|
