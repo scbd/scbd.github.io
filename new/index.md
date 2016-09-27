@@ -1,4 +1,4 @@
-/*---
+---
 title: SCBD OAuth Refernce
 layout: layout
 version: v1.0
@@ -18,7 +18,7 @@ includes:
 
 search: true
 ---
-*/
+
 # Introduction
 
 Understanding the way OAuth works can help create and debug applications which use SCBD's API. To use OAuth, an application must:
