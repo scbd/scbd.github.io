@@ -19,9 +19,6 @@ includes:
 search: true
 ---
 
-
-
-
 # Introduction
 
 Understanding the way OAuth works can help create and debug applications which use SCBD's API. To use OAuth, an application must:
@@ -68,14 +65,10 @@ A refresh token never expires unless if there is a change in scope or if the use
 Obtain an authorization-code from the API (instead of UI)*
 
 ### Request
-```POST /api/v2016/me/authorize 
-  { email: "xxxx", password: "xxxx" }
-```
+```POST /api/v2016/me/authorize   { email: "xxxx", password: "xxxx" }```
 
 ### Response
-```
-{ code: "AAAAAAAAAAAAAAAA", expire_in: 300 }
-```
+```{ code: "AAAAAAAAAAAAAAAA", expire_in: 300 }```
 
 ## authorization-code(with delegation)
 
@@ -83,9 +76,7 @@ Obtain an authorization-code from the API (instead of UI)*
 
 ##### Resource
 --------------
-```
-https://accounts.cbd.int/authorize?response_type=code&client_id=1111&redirect_uri=xyzxyzxyz&scope=all
-```
+```https://accounts.cbd.int/authorize?response_type=code&client_id=1111&redirect_uri=xyzxyzxyz&scope=all```
 
 | response_type | response_type can be code (recommended for services) or token (recommended for web and native (e.g. iOS, Android) applications). |
 | client_id     | custom application client id |
