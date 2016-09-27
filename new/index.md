@@ -102,7 +102,7 @@ https://client.com/callback#token=ACCESS_TOKEN
 ```
 
 ## Exchange authorization-code for access-token
-In case if you have a `authorization_code` you can exchange it for a `access-token`
+In case if you have a `authorization_code` you can exchange it for a `access_token`
 
 ##### Resource
 ```
@@ -124,7 +124,7 @@ POST /api/v2016/oauth2/token
 | Parameter     | Description   | 
 | ------------- |:-------------:|
 | access_token     | The `access_token` exchanged for the code |
-| expire_in | The expiration of the `access_token` in minutes|
+| expire_in | The expiration of the `access_token` in seconds|
 | scope | The authorised scope for the application |
 | refresh_token | The `refresh_token` for this authorization which can be used to renew `access_token` |
 | token_type | The type of the token which should be used when authorizing a request|
