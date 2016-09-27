@@ -137,13 +137,3 @@ GET /api/v2016/me
 Content-Type: application/json
 Authorization: Bearer="BBBBBBBBBBBBBBBB"
 ```
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
----- | ----
-ID | The ID of the kitten to retrieve
-
