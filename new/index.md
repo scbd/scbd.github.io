@@ -76,9 +76,34 @@ POST /api/v2016/me/authorize   { email: "xxxx", password: "xxxx" }
 { code: "AAAAAAAAAAAAAAAA", expire_in: 300 }
 ```
 
-## Authorization-code(with delegation)
+## Authorization Grant(with delegation)
 
-Allows a custom application to obtain an OAuth authorization-code from CBD accounts.cbd.int though end-user authorization.
+#### Authrorization Grant and Access Token flow
+```  
+  +--------+                                           +---------------+
+  |        |---------(A) Authorization Request ------->|               |
+  |        |                                           |               |
+  |        |<--------(B) Authorization Grant ----------|               |
+  |        |                                           | Authorization |
+  | Client |                                           |     Server    |
+  |        |                                           |               |
+  |        |---------(C) Authorization Grant --------->|               |
+  |        |                                           |               |
+  |        |<--------(D) Access Token -----------------|               |
+  |        |                                           |               |
+  |        |                                           |               |
+  |        |                                           |               |
+  |        |---------(E) Access Token ---------------->|               |
+  |        |                                           |               |
+  |        |<--------(F) protected Resource -----------|               |
+  |        |                                           |               | 
+  |        |                                           |               |
+  +--------+                                           +———————+
+ ```
+ 
+Allows a custom application to obtain OAuth authorization grant from CBD accounts.cbd.int though end-user authorization.
+
+
 
 ##### Resource
 ```
@@ -142,29 +167,6 @@ GET /api/v2016/me
 Content-Type: application/json
 Authorization: Bearer BBBBBBBBBBBBBBBB
 ```
-## Authrorization Grant and Access Token flow
-```  
-  +--------+                                           +---------------+
-  |        |---------(A) Authorization Request ------->|               |
-  |        |                                           |               |
-  |        |<--------(B) Authorization Grant ----------|               |
-  |        |                                           | Authorization |
-  | Client |                                           |     Server    |
-  |        |                                           |               |
-  |        |---------(C) Authorization Grant --------->|               |
-  |        |                                           |               |
-  |        |<--------(D) Access Token -----------------|               |
-  |        |                                           |               |
-  |        |                                           |               |
-  |        |                                           |               |
-  |        |---------(E) Access Token ---------------->|               |
-  |        |                                           |               |
-  |        |<--------(F) protected Resource -----------|               |
-  |        |                                           |               | 
-  |        |                                           |               |
-  +--------+                                           +———————+
- ```
-
 ## Post Authorization Grant flow
 ```  
   +--------+                                           +---------------+
