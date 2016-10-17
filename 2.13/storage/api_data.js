@@ -1292,7 +1292,7 @@ define({ "api": [
     },
     "parameter": {
       "fields": {
-        "Query String": [
+        "Query String": [          
           {
             "group": "Query String",
             "type": "<p>String</p> ",
@@ -2086,6 +2086,13 @@ define({ "api": [
           },
           {
             "group": "Success",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "latestRevision",
+            "description": "<p>Latest revision number</p> "
+          },
+          {
+            "group": "Success",
             "type": "<p>String</p> ",
             "optional": false,
             "field": "realm",
@@ -2223,6 +2230,48 @@ define({ "api": [
             "optional": false,
             "field": "updatedBy.email",
             "description": "<p>Updator Email</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>Datetime</p> ",
+            "optional": false,
+            "field": "deletedOn",
+            "description": "<p>Date &amp; time of deletion</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "deletedBy",
+            "description": "<p>Deleted by identity</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "deletedBy.userID",
+            "description": "<p>Deleted by Id</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "deletedBy.firstName",
+            "description": "<p>Deleted by First Name</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "deletedBy.lastName",
+            "description": "<p>Deleted by Last name</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "deletedBy.email",
+            "description": "<p>Deleted by Email</p> "
           },
           {
             "group": "Success",
@@ -3603,6 +3652,13 @@ define({ "api": [
           },
           {
             "group": "Success",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "latestRevision",
+            "description": "<p>Latest revision number</p> "
+          },
+          {
+            "group": "Success",
             "type": "<p>String</p> ",
             "optional": false,
             "field": "realm",
@@ -3740,6 +3796,48 @@ define({ "api": [
             "optional": false,
             "field": "updatedBy.email",
             "description": "<p>Updator Email</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>Datetime</p> ",
+            "optional": false,
+            "field": "deletedOn",
+            "description": "<p>Date &amp; time of deletion</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>Object</p> ",
+            "optional": false,
+            "field": "deletedBy",
+            "description": "<p>Deleted by identity</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "deletedBy.userID",
+            "description": "<p>Deleted by Id</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "deletedBy.firstName",
+            "description": "<p>Deleted by First Name</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "deletedBy.lastName",
+            "description": "<p>Deleted by Last name</p> "
+          },
+          {
+            "group": "Success",
+            "type": "<p>String</p> ",
+            "optional": false,
+            "field": "deletedBy.email",
+            "description": "<p>Deleted by Email</p> "
           },
           {
             "group": "Success",
@@ -4024,6 +4122,12 @@ define({ "api": [
             "group": "Query String",
             "type": "<p>String</p> ",
             "optional": true,
+            "field": "collection",
+            "description": "<p>The <code>collection</code> system query option allows clients to filter a collection of resources. </p> <br><br> Allowed values: <code>my</code>, <code>mydrafts</code> "
+          },{
+            "group": "Query String",
+            "type": "<p>String</p> ",
+            "optional": true,
             "field": "filter",
             "description": "<p>The <code>$filter</code> system query option allows clients to filter a collection of resources. see: <a href=\"http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398094\">OData $filter</a> <br><br>Use <code>$filter</code> instead of <strong>filter</strong>.<br><em>TODO: Update variable naming to support '$' in apidocjs.</em></p> "
           },
@@ -4052,6 +4156,10 @@ define({ "api": [
       },
       "examples": [
         {
+          "title": "collection",
+          "content": "GET /api/v2013/documents?collection=my\n\nHTTP/1.1 200 OK\n[\n  { \"identifier\" : \"012345abcd\", \"type\" : \"resource\", ... },\n  { \"identifier\" : \"012345abce\", \"type\" : \"resource\", ... },\n  ...\n]",
+          "type": "http"
+        },{
           "title": "$filter",
           "content": "GET /api/v2013/documents?$filter=type+eq+'resource'\n\nHTTP/1.1 200 OK\n[\n  { \"identifier\" : \"012345abcd\", \"type\" : \"resource\", ... },\n  { \"identifier\" : \"012345abce\", \"type\" : \"resource\", ... },\n  ...\n]",
           "type": "http"
@@ -6629,6 +6737,13 @@ define({ "api": [
           },
           {
             "group": "Success",
+            "type": "<p>Number</p> ",
+            "optional": false,
+            "field": "latestRevision",
+            "description": "<p>Latest revision number</p> "
+          },
+          {
+            "group": "Success",
             "type": "<p>String</p> ",
             "optional": false,
             "field": "realm",
@@ -7069,6 +7184,12 @@ define({ "api": [
       "fields": {
         "Query String": [
           {
+            "group": "Query String",
+            "type": "<p>String</p> ",
+            "optional": true,
+            "field": "collection",
+            "description": "<p>The <code>collection</code> system query option allows clients to filter a collection of resources. </p> <br><br> Allowed values: <code>my</code>, <code>mydrafts</code> "
+          },{
             "group": "Query String",
             "type": "<p>String</p> ",
             "optional": true,
