@@ -59,7 +59,7 @@
             "type": "<p>Object</p> ",
             "optional": false,
             "field": "treaties.XXVII8",
-            "description": "<p>CBD treaty status, refer https://api.cbd.int/api/v2015/treaties for treaty mapping</p> "
+            "description": "<p>CBD treaty status, refer <a href='https://api.cbd.int/api/v2015/treaties'>treaty mapping</a></p> "
           },
           {
             "group": "Success",
